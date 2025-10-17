@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Registration</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ====== GLOBAL ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* ====== CARD CONTAINER ====== */
+    .form-container {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 850px;
+      overflow: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .form-header {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      color: white;
+      padding: 25px 30px;
+      text-align: center;
+    }
+
+    .form-header h2 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .form-body {
+      padding: 30px 40px;
+    }
+
+    /* ====== INPUT STYLES ====== */
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #00aaff;
+      outline: none;
+      box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
+    }
+
+    .form-group label {
+      position: absolute;
+      top: -8px;
+      left: 12px;
+      background: #fff;
+      padding: 0 5px;
+      font-size: 13px;
+      color: #0072ff;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-row .form-group {
+      flex: 1 1 45%;
+    }
+
+    /* ====== BUTTON ====== */
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 114, 255, 0.3);
+    }
+
+    /* ====== TOAST ALERT ====== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00b894;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <div class="form-header">
+      <h2><i class="fa-solid fa-user-plus"></i> Member Registration Form</h2>
+    </div>
+    <form id="memberForm" class="form-body">
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Gender</label>
+          <select required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Contact Number</label>
+          <input type="tel" placeholder="Enter contact number" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" placeholder="Enter country" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Postcode</label>
+          <input type="text" placeholder="Enter postcode" required>
+        </div>
+        <div class="form-group">
+          <label>Occupation</label>
+          <input type="text" placeholder="Enter occupation" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Membership Type</label>
+          <select required>
+            <option value="">Select Membership</option>
+            <option>Basic - $10</option>
+            <option>Standard - $25</option>
+            <option>Premium - $50</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Member Photo</label>
+          <input type="file" accept="image/*">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+    </form>
+  </div>
+
+  <!-- Toast message -->
+  <div class="toast" id="toast">✅ Member Registered Successfully!</div>
+
+  <script>
+    const form = document.getElementById('memberForm');
+    const toast = document.getElementById('toast');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+      form.reset();
+    });
+  </script>
+</body>
+</html>

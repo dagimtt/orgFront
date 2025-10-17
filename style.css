@@ -17,8 +17,8 @@ body {
 
 /* ---------- Header ---------- */
 header {
-  background: #0a3d62;
-  color: white;
+  background:white;
+  color: black;
   padding: 12px 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: fixed;
@@ -26,6 +26,8 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
+  border-bottom: #000000;
+  box-shadow: rgb(31, 30, 30);
 }
 
 /* ---------- Navbar Layout ---------- */
@@ -37,11 +39,16 @@ header {
   align-items: center;
   width: 100%;
 }
-
+.navbar img{
+  width: 50px;
+  height: 50px;
+}
 .logo {
+  position: fixed;
+  margin-left: 70px;
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: rgb(7, 7, 53);
 }
 
 /* ---------- Desktop Links ---------- */
@@ -53,15 +60,14 @@ header {
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: 500;
   padding: 8px 14px;
   border-radius: 4px;
   transition: background 0.3s, color 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover{
   background: #3c6382;
   color: #f1f1f1;
 }
@@ -412,7 +418,7 @@ section h2 {
 /* News Section Grid */
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
@@ -495,7 +501,7 @@ section h2 {
 /* Events Section Grid (same layout as News) */
 .event-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 
 }
@@ -595,18 +601,33 @@ body.dark-mode .navbar a {
   color: #e0e0e0;
 }
 
-body.dark-mode .navbar a:hover,
-body.dark-mode .navbar a.active {
-  background: #1a3b6d; /* slightly lighter blue on hover */
-  color: #fff;
-}
 
 body.dark-mode .news-card,
 body.dark-mode .event-card {
   background: #0f2b4d; /* dark blue card */
   box-shadow: 0 2px 10px rgba(0,0,0,0.7);
 }
-
+body.dark-mode .news h2 {
+  color: wheat;
+}
+body.dark-mode .events h2 {
+  color: wheat;
+}
+body.dark-mode .event-content h3,
+body.dark-mode .news-content {
+  color: white;
+}
+body.dark-mode .platform-content p {
+   color: #fff;
+}
+body.dark-mode .logo {
+   color: #fff;
+}
+ body.dark-mode .platform-section,
+body.dark-mode .leadership-section {
+  background: #0a1f3d;
+  color: #f9fafc;
+}
 body.dark-mode .news-content p,
 body.dark-mode .event-content p {
   color: #cfd8ef; /* light blue-ish text */
@@ -678,7 +699,7 @@ body.dark-mode .scroll-down span {
   background: linear-gradient(90deg, #00aaff, #0077ff);
   color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;margin-top: 15%;
 }
 
 .join-btn:hover {
@@ -703,7 +724,7 @@ body.dark-mode .scroll-down span {
   border-radius: 50%;
   border: 3px solid #fff;
   position: absolute;
-  animation: float 6s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Example positions for floating images */
@@ -736,6 +757,7 @@ body.dark-mode .scroll-down span {
 .platform-section {
   background: #ffffff;
   color: #080808;
+  
   padding: 100px 8%;
   display: flex;
   justify-content: center;
@@ -752,7 +774,7 @@ body.dark-mode .scroll-down span {
 
 .platform-container {
   display: flex;
-  gap: 50px;
+  gap: 100px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -857,3 +879,283 @@ body.dark-mode .scroll-down span {
 
 }
 
+
+
+/* leader stractur */
+/* Leadership Section */
+.leadership-section {
+  background: #f9fafc;
+  color: #222;
+  
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.leadership-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.leadership-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.leadership-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+}
+
+.leadership-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.leader-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 250px;
+  padding: 25px 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+
+.leader-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.leader-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+ 
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.leader-card:hover img {
+  transform: scale(1.05);
+}
+
+.leader-card h3 {
+  font-size: 1.2rem;
+  color: #0a3d62;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.leader-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .leadership-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leader-card {
+    width: 80%;
+    max-width: 350px;
+  }
+}
+
+
+
+/* Complaint Section */
+.complain-section {
+  background: #f8faff;
+  color: #222;
+  padding: 100px 20px;
+  text-align: center;
+  display: none; /* hidden by default */
+}
+
+
+.complain-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 50px 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+body.dark-mode .complain-section,
+body.dark-mode .complain-container {
+  background: #0f2b4d; /* dark blue card */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+.complain-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.complain-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.complain-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+.complain-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #0a3d62;
+}
+body.dark-mode .complain-subtitle {
+ color: wheat;
+}
+body.dark-mode label{
+ color: white;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #cfd8dc;
+  background: #f9f9f9;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+body.dark-mode input, textarea {
+ color: wheat;
+}
+input:focus, textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  background: #fff;
+}
+
+.complain-form button {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  border: none;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.complain-form button:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================
+   Floating Complain Button
+   ========================== */
+.floating-complain-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 114, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2000; /* Always stays above everything */
+}
+
+.floating-complain-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 114, 255, 0.5);
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .floating-complain-btn {
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-complain-btn {
+    bottom: 12px;
+    right: 12px;
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+}
+
+  /* === MODAL === */
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: fadeIn 0.4s ease;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 22px;
+      float: right;
+      cursor: pointer;
+      padding: 10px 15px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+ 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complain About Our Organization</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Reuse your navbar if needed -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">ICS Prosperity-Party</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="index.html#new">News</a></li>
+        <li><a href="#">Request</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Complaint Section -->
+  <section class="complain-section" id="complain">
+    <div class="complain-container" data-aos="fade-up">
+      <h2 class="complain-title">Complain About Our Organization</h2>
+      <p class="complain-subtitle">
+        We value your feedback! Please share your concerns or suggestions to help us improve and better serve our community.
+      </p>
+
+      <form class="complain-form" action="submit_complaint.php" method="POST" data-aos="zoom-in">
+
+        <div class="form-group">
+          <label for="complaint">Your Complaint</label>
+          <textarea id="complaint" name="complaint" rows="5" placeholder="Write your complaint here..." required></textarea>
+        </div>
+
+        <button type="submit" class="complain-btn">Submit Complaint</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
